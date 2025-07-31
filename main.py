@@ -35,11 +35,11 @@ PASSWORD = os.getenv("PORTSWIGGER_PASSWORD")
 MODEL = os.getenv("CAI_MODEL")
 
 
-SECTION = "cross-site-scripting" # Change this to the desired section or type of portswigger lab
+SECTION = "sql-injection" # Change this to the desired section or type of portswigger lab
 N_LABS = 5 # If you want to test all the labs in the section, change this to -1
 
 AGENT = "webbounty"
-PROMPT_TYPE = "zero-shot" # Change this to the desired prompt method
+PROMPT_TYPE = "chain-of-thought" # Change this to the desired prompt method
 TOOLS = [generic_linux_command,
          execute_code]
 
@@ -95,6 +95,7 @@ def delete_files(folder="logs"):
     # List all files in the folder
     files = os.listdir(folder)
     # Check if there are any files
+
     if files:
         for filename in files:
             file_path = os.path.join(folder, filename)
