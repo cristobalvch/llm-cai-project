@@ -123,6 +123,7 @@ env.bak/
 venv.bak/
 .venv39
 .venv_res
+!.env.example
 
 # Spyder project settings
 .spyderproject
