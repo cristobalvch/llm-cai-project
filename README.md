@@ -1,3 +1,5 @@
+# Benchmarking LLMs in Cybersecurity: Comparing Models and Prompting Methods in Lab Challenges.
+
 ## Introduction
 
 This project focuses on exploring and evaluating the integration of large language models (LLMs) into web application attack scenarios using the **Cybersecurity AI (CAI)** framework. This involves testing various prompting methods and LLMs to assess their effectiveness in identifying vulnerabilities within web applications.
@@ -7,11 +9,22 @@ This project focuses on exploring and evaluating the integration of large langua
 
 This project focuses on the following objectives:
 
-- **Compare** the performance of **GPT-4o** and **DeepSeek V3** within the [**CAI Framework**](https://aliasrobotics.github.io/cai/).
+- Compare the performance of different LLMs within the [**CAI Framework**](https://aliasrobotics.github.io/cai/).
 - Use [*PortSwigger labs*](https://portswigger.net/web-security) as an environment to test the LLMs.
-- Evaluate the effectiveness of the models in identifying and exploiting common web vulnerabilities, specifically **SQL Injection (SQLi)**, **Cross-Site Scripting (XSS)**, and **Cross-Site Request Forgery (CSRF)**.
-- Compare the models using prompting methods: **zero-shot**, **few-shot**, and **chain-of-thought**.
+- Evaluate the effectiveness of the models in identifying and exploiting common web vulnerabilities.
+- Compare the models using prompting methods such as **zero-shot**, **few-shot**, and **chain-of-thought**.
 - Assess performance using metrics such as **turns, time, cost, tokens,** and **number of payloads (tools) generated**.
+
+## Methodolody
+The program follows a sequence of steps to evaluate the models. These steps are defined below:
+
+- 1. The user configures the variables for the LLM, the prompt method, and the PortSwigger lab environment.
+- 2. The PortSwigger bot extracts the data from the labs.
+- 3. The prompt method templates are formatted with the lab information.
+- 4. The custom AI agent in CAI runs and attempts to solve the lab challenges.
+- 5. The PortSwigger bot verifies if each lab is solved.
+- 6. The logs of the labs and terminal outputs are saved.
+- 7. After the agent completes all tasks, the lab logs can be evaluated using the metrics.ipynb notebook.
 
 
 ## Project Folder Structure
@@ -22,8 +35,8 @@ llm-cai-project/                  # Root directory of the project
 ├── results/                      # Final experiment logs
 ├── terminal-output/              # Saved terminal output sessions
 ├── metrics-experiment/           # Metrics of the experiment
-│   ├── calculated-evaluation-metrics.xlsx   # Average and sum-based metrics
-│   └── evaluation-metrics.xlsx              # Metrics of each lab
+│   ├── calculated-evaluation-metrics.xlsx   # Average and sum-based metrics (generated after running main.py)
+│   └── evaluation-metrics.xlsx              # Metrics of each lab (generated after running main.py)
 ├── utils/                        # Utility scripts and configs
 │   ├── helpers.py                # General helper functions
 │   ├── portswiggerbot.py         # Automation for PortSwigger bot
@@ -35,7 +48,7 @@ llm-cai-project/                  # Root directory of the project
 ## Steps for Reproducibility
 
 1. Create a `.env` file in the main folder. For more details, see [**.env.example**](https://github.com/cristobalvch/llm-cai-project/blob/main/.env.example) file.  
-2. Configure the variables related to the PortSwigger account and the LLM used.  
+2. Configure the variables related to the PortSwigger account and the LLM used. You can create a PortSwigger account [here](https://portswigger.net/web-security).
 3. Install the Python dependencies with the command:  
    ```bash
    pip install -r requirements.txt
@@ -47,10 +60,11 @@ llm-cai-project/                  # Root directory of the project
     AGENT = "webbounty"
     PROMPT_TYPE = "zero-shot"  # Change this to the desired prompt method
    ```
+   To see more information about the prompt templates by type, see the [**promts.yml**](https://github.com/cristobalvch/llm-cai-project/blob/main/prompts.yml) file.
 5. Open a terminal in the main folder and run the main script with the command:
     ```python
     python main.py
     ```
 6. Once the script stops, create the metrics table and graphs running the notebook
-metrics.ipynb
+[**metrics.ipynb**](https://github.com/cristobalvch/llm-cai-project/blob/main/metrics.ipynb)
 
