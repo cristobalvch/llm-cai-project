@@ -2,7 +2,10 @@
 
 ## Introduction
 
-This project focuses on exploring and evaluating the integration of large language models (LLMs) into web application attack scenarios using the **Cybersecurity AI (CAI)** framework. This involves testing various prompting methods and LLMs to assess their effectiveness in identifying vulnerabilities within web applications.
+This project explores and evaluates the integration of **Large Language Models (LLMs)** into web application attack scenarios using the **Cybersecurity AI (CAI)** framework. The goal is to test various prompting methods and different LLMs to assess their effectiveness in identifying vulnerabilities within web applications.
+
+**Fully Automated (No HITL):**  
+The pipeline is designed to be **fully automated, with no Human-in-the-Loop (HITL)**. When the agent attempts to solve the challenge labs, **no human interaction with the model is required**; all decisions, iterations, and actions are executed autonomously according to the experiment’s configuration and the prompt templates.
 
 
 ## Objectives
