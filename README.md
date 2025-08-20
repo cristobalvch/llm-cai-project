@@ -1,4 +1,4 @@
-# Benchmarking LLMs in Cybersecurity: Comparing Models and Prompting Methods in Lab Challenges.
+# Benchmarking Agentic AI in Cybersecurity: Comparing Models and Prompting Methods in Lab Challenges with CAI.
 
 ## Introduction
 
@@ -41,7 +41,8 @@ llm-cai-project/                  # Root directory of the project
 │   ├── helpers.py                # General helper functions
 │   ├── portswiggerbot.py         # Automation for PortSwigger bot
 │   └── topics-prefixes.json      # Topic prefixes for PortSwigger bot
-├── main.py                       # Main execution script
+├── main.py                       # Main execution script (it uses simple curl tools to interact with labs)
+├── server.py                     # Main execution script (it uses Burp Suite MCP server to interact with labs)
 ├── metrics.ipynb                 # Notebook for evaluating metrics
 └── prompts.yml                   # Prompt templates
 ```
@@ -62,8 +63,17 @@ llm-cai-project/                  # Root directory of the project
    ```
    To see more information about the prompt templates by type, see the [**promts.yml**](https://github.com/cristobalvch/llm-cai-project/blob/main/prompts.yml) file.
 5. Open a terminal in the main folder and run the main script with the command:
-    ```python
+    ```bash
     python main.py
+    ```
+    In case you want to run the script using Burp Suite MCP server to interact with the labs, you need first to install the MCP server. More information on this [link](https://portswigger.net/bappstore/9952290f04ed4f628e624d0aa9dccebc).
+    Then, set up the variable SERVER_URL in the script server.py as follows:
+    ```python
+    SERVER_URL = "http://127.0.0.1:9876/sse"
+    ```
+    Finally run the script with python.
+     ```bash
+    python server.py
     ```
 6. Once the script stops, create the metrics table and graphs running the notebook
 [**metrics.ipynb**](https://github.com/cristobalvch/llm-cai-project/blob/main/metrics.ipynb)
