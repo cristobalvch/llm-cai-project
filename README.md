@@ -122,7 +122,7 @@ but failed to solve the challenge.
 and solved the challenge
 
 ### Example of performance results. 
-The following  example table summarizes the performance metrics of **DeepSeek-V3** and **GPT-4o** when solving a total of  15 security labs (5 each on SQL Injection, Cross-Site Scripting (XSS), and Cross-Site Request Forgery (CSRF)).  
+The following  example table summarizes the performance metrics of **DeepSeek-V3** and **GPT-4o** when solving a total of  15 security labs (5 each on SQL Injection, Cross-Site Scripting, and Cross-Site Request Forgery).  
 The results are broken down by different prompting strategies and include interaction times, token usage, and assistant behavior statistics. For more examples  with graphs and tables you can check the [**metrics.ipynb**](metrics.ipynb) file.
 
 | prompt           | model                  | avg_turns | avg_active_seconds | avg_idle_seconds | avg_total_seconds | avg_prompt_tokens | avg_completion_tokens | avg_total_tokens | avg_interaction_costs | avg_total_assistant_messages | avg_total_assistant_tools |
